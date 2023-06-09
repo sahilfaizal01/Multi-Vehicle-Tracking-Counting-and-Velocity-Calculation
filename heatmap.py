@@ -459,7 +459,7 @@ def detect(save_img=False):
                       # increment frequency counter for whole bounding box
                       global_img_np_array[y1:y2,x1:x2] += 1
                     # heatmap array pre-processing
-                    global_img_np_array_norm = (global_img_np_array - global_img_np_array.min())/(global_img_np_array - global_img_np_array.max())
+                    global_img_np_array_norm = (global_img_np_array - global_img_np_array.min())/(global_img_np_array.max - global_img_np_array.min())
                     global_img_np_array_norm = global_img_np_array.astype('uint8')
                     # apply gaussian blur and draw heatmap
                     global_img_np_array_norm = cv2.GaussianBlur(global_img_np_array_norm,(9,9),0)
