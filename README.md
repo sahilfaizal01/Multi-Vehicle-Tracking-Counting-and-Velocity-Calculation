@@ -2,9 +2,7 @@
 This computer vision project utilizes YOLOv7 and DeepSORT Algorithm for multi-object tracking.
 
 # Future Work
-* Implementing YOLOv8 version
 * Incorporating Vehicle Intensity Heatmap
-* Making a webapp
 
 # Introduction
 * Object Tracking is a method to track detected objects throughout the frames using their spatial and temporal features.
