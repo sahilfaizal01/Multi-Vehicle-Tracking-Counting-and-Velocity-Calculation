@@ -51,6 +51,21 @@ When object enters or leave the unique object id's are created and destroyed acc
 * DeepSORT uses a better association metrics which combines both motion and appearance descriptors.
 * DeepSORT can be defined as a tracking algorithm which track object not only based on the velocity and motion of the object but also based on the appearance of the object.
 
+## Implementation of Traffic Counter
+* An empty dictionary is intialized which contains detected object name with the total count
+* Intersection between an imaginary marker line and trail line is identified for traffic counting
+
+## Implementation of Velocity Calculation
+* Distance is estimated using the euclidean formula
+* Pixel per meter (ppm) parameter can be set static (ppm = 8) or dynamic (ppm = 20 when vehicle is closer and ppm = 1 when away from the camera)
+* Distance in meters (d_meters) will be distance in pixels / ppm
+* Since FPS=15 here, the time constant = FPS * 3.6 (an adjusted constant for calibrated results)
+* Speed will be d_meters * time constant
+
+## Implementation of Vehicle Counting (Entry and Leaving)
+* Vehicles entrying are moving North while the ones leaving are travelling South
+* Based on the intersection and direction, two diff dictionaries are maintained to find entry and exit
+
 # DETECTION RESULTS
 ## test1.mp4
 <img width="1274" alt="image" src="https://github.com/sahilfaizal01/Multi-Vehicle-Tracking-Counting-and-Velocity-Calculation/assets/106440078/e702b7e3-1b12-4a1f-a707-adec34cd6ca5">
